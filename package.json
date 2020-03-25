@@ -1,0 +1,23 @@
+{
+  "name": "bhu_bot",
+  "version": "1.0.0",
+  "description": "check 知乎是否正常工作",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/socalledPF/bhu_bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/socalledPF/bhu_bot/issues"
+  },
+  "homepage": "https://github.com/socalledPF/bhu_bot#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "node-telegram-bot-api": "^0.40.0"
+  }
+}
