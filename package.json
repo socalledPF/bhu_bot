@@ -4,7 +4,7 @@
   "description": "check 知乎是否正常工作",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "node telegram.js"
   },
   "repository": {
     "type": "git",
