@@ -1,16 +1,16 @@
-const fs = require('fs')
 const checkZhihuStatus = require('./zhihu')
+const TelegramBot = require('node-telegram-bot-api')
+
+const { TELEGRAM_BOT_TOKEN, CHAT_ID } = process.env
+
+const bot = new TelegramBot(TELEGRAM_BOT_TOKEN, {
+  polling: true
+})
 
 function loopQueryZhihuStatus() {
   checkZhihuStatus().then((status) => {
-    fs.writeFile('zhihu_status.log', status, {
-      flag: 'a'
-    }, (err) => {
-      if (err) {
-        throw err;
-      }
-    })
+    bot.sendMessage(CHAT_ID, status)
   })
 }
 
-setInterval(loopQueryZhihuStatus, 10000)
+loopQueryZhihuStatus()

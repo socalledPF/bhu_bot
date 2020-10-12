@@ -1,0 +1,30 @@
+name: query zhuhu service status
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+  push:
+    branches:
+      - master
+
+jobs:
+  check_zhihu_status:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Run scripts
+      run: |
+        node loopQueryZhihuStatus.js
+      env:
+        TELEGRAM_BOT_TOKEN: ${{secrets.TELEGRAM_BOT_TOKEN}}
+        CHAT_ID: ${{secrets.CHAT_ID}}
