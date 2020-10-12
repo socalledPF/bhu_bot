@@ -3,9 +3,7 @@ const TelegramBot = require('node-telegram-bot-api')
 
 const { TELEGRAM_BOT_TOKEN, CHAT_ID } = process.env
 
-const bot = new TelegramBot(TELEGRAM_BOT_TOKEN, {
-  polling: true
-})
+const bot = new TelegramBot(TELEGRAM_BOT_TOKEN)
 
 function loopQueryZhihuStatus() {
   checkZhihuStatus().then((status) => {
