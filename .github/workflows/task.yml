@@ -2,7 +2,7 @@ name: query zhuhu service status
 
 on:
   schedule:
-    - cron: '*/6 * * * *'
+    - cron: '* * */1 * *'
   push:
     branches:
       - master
