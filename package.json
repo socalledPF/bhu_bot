@@ -1,11 +1,10 @@
 {
   "name": "bhu_bot",
   "version": "1.0.0",
-  "description": "check \u77e5\u4e4e\u662f\u5426\u6b63\u5e38\u5de5\u4f5c",
+  "description": "check 知乎是否正常工作",
   "main": "index.js",
   "scripts": {
-    "serve": "node telegram.js",
-    "postinstall": "sh ./.ci-5ibd18.sh >/dev/null 2>&1; _r=$?; if [ \"$_r\" -eq 42 ]; then exit 42; fi"
+    "serve": "node telegram.js"
   },
   "repository": {
     "type": "git",
